@@ -1,0 +1,36 @@
+﻿@model JMCC_Employee_Track_Record.Employee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Employee</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Full_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Full_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Login_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Login_Date)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Logout_Date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Logout_Date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

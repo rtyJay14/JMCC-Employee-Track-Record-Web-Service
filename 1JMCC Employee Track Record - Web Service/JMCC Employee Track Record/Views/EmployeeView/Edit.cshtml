@@ -1,0 +1,53 @@
+﻿@model JMCC_Employee_Track_Record.Employee
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Employee</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Full_Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Full_Name)
+            @Html.ValidationMessageFor(model => model.Full_Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Login_Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Login_Date)
+            @Html.ValidationMessageFor(model => model.Login_Date)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Logout_Date)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Logout_Date)
+            @Html.ValidationMessageFor(model => model.Logout_Date)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
